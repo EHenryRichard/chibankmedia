@@ -7,15 +7,12 @@ export default function ContactForm() {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    const name = (data.get("name") as string) || "";
-    const email = (data.get("email") as string) || "";
-    const brand = (data.get("brand") as string) || "";
-    const message = (data.get("message") as string) || "";
+    const data = new FormData(e.currentTarget);
+    const name = data.get("name") as string;
+    const email = data.get("email") as string;
+    const brand = data.get("brand") as string;
+    const message = data.get("message") as string;
 
-    // Until a backend / form service is wired up, hand off to the user's
-    // email client with everything pre-filled.
     const subject = encodeURIComponent(`New enquiry from ${name}`);
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nBrand / Business: ${brand}\n\n${message}`
@@ -26,25 +23,17 @@ export default function ContactForm() {
 
   if (sent) {
     return (
-      <div
-        style={{
-          border: "1px solid var(--line)",
-          borderRadius: 18,
-          padding: "2.4rem",
-          background: "var(--white)",
-        }}
-      >
-        <span className="eyebrow">Thank You</span>
-        <h3 style={{ fontSize: "1.8rem", marginBlock: "1rem 0.8rem" }}>
+      <div style={{ paddingBlock: "2rem" }}>
+        <span className="label no-line">Message Sent</span>
+        <h3 style={{ fontSize: "clamp(1.5rem,3vw,2.2rem)", marginBlock: "1.2rem 0.8rem" }}>
           Your message is on its way.
         </h3>
-        <p style={{ color: "var(--ink-soft)" }}>
-          We&apos;ve opened your email app with the details ready to send. If it
-          didn&apos;t open, reach us directly at{" "}
-          <a href="mailto:hello@chibankzmedia.com" style={{ color: "var(--orange)" }}>
+        <p style={{ color: "var(--cream-dim)" }}>
+          We&apos;ve opened your email client with everything pre-filled. If it
+          didn&apos;t open, reach us at{" "}
+          <a href="mailto:hello@chibankzmedia.com" style={{ color: "var(--orange)", textDecoration: "underline" }}>
             hello@chibankzmedia.com
-          </a>
-          .
+          </a>.
         </p>
       </div>
     );
@@ -52,19 +41,19 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="field">
+      <div className="form-field">
         <label htmlFor="name">Your Name</label>
         <input id="name" name="name" type="text" required placeholder="Jane Doe" />
       </div>
-      <div className="field">
-        <label htmlFor="email">Email</label>
+      <div className="form-field">
+        <label htmlFor="email">Email Address</label>
         <input id="email" name="email" type="email" required placeholder="you@brand.com" />
       </div>
-      <div className="field">
-        <label htmlFor="brand">Brand / Business</label>
+      <div className="form-field">
+        <label htmlFor="brand">Brand / Business Name</label>
         <input id="brand" name="brand" type="text" placeholder="What should we know it as?" />
       </div>
-      <div className="field">
+      <div className="form-field">
         <label htmlFor="message">How can we help?</label>
         <textarea
           id="message"
@@ -73,11 +62,13 @@ export default function ContactForm() {
           placeholder="Tell us about your goals, your platforms, and where you're stuck."
         />
       </div>
-      <button type="submit" className="btn btn-primary">
-        Send Message
-      </button>
-      <p className="form-note">
-        Prefer to chat? Email us directly at hello@chibankzmedia.com.
+      <div style={{ marginTop: "0.8rem" }}>
+        <button type="submit" className="btn btn-orange">
+          Send Message
+        </button>
+      </div>
+      <p style={{ marginTop: "1.2rem", fontSize: "0.8rem", color: "var(--cream-sub)" }}>
+        Prefer direct contact? Email hello@chibankzmedia.com
       </p>
     </form>
   );

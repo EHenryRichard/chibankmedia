@@ -4,75 +4,45 @@ import CtaBanner from "@/components/CtaBanner";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Social media management, content creation, strategy, growth, and personal branding for small businesses and personal brands.",
+    "Social media management, content creation, strategy, growth, Meta ads, and brand audits for small businesses and personal brands.",
 };
 
 const services = [
   {
-    idx: "01",
+    n: "01",
     title: "Social Media Management",
-    desc: "Hand us the accounts. We plan, create, schedule, post, and engage — so your social presence stays consistent without eating your week.",
-    points: [
-      "Monthly content calendar",
-      "Daily posting & scheduling",
-      "Community & DM management",
-      "Monthly performance reporting",
-    ],
+    desc: "Hand us the accounts. We plan, create, schedule, post, and engage — so your presence stays consistent without eating your week.",
+    tags: ["Monthly content calendar", "Daily posting", "Community & DM management", "Monthly reporting"],
   },
   {
-    idx: "02",
+    n: "02",
     title: "Content Creation",
-    desc: "Content built around your voice and your audience — designed to stop the scroll and start a relationship.",
-    points: [
-      "Branded graphics & carousels",
-      "Short-form reels & video direction",
-      "Captions & copywriting",
-      "Visual identity for your feed",
-    ],
+    desc: "Content built around your voice and your audience — designed to stop the scroll and start a real relationship.",
+    tags: ["Branded graphics & carousels", "Short-form reels", "Captions & copywriting", "Feed visual identity"],
   },
   {
-    idx: "03",
+    n: "03",
     title: "Strategy & Consulting",
-    desc: "A clear roadmap for who you're talking to, what you're saying, and how it turns attention into customers.",
-    points: [
-      "Audience & competitor research",
-      "Positioning & messaging",
-      "Platform & growth strategy",
-      "90-minute strategy intensive",
-    ],
+    desc: "A clear roadmap for who you&apos;re talking to, what you&apos;re saying, and how it turns attention into customers.",
+    tags: ["Audience & competitor research", "Positioning & messaging", "Platform strategy", "90-min intensive"],
   },
   {
-    idx: "04",
+    n: "04",
     title: "Personal Branding",
     desc: "For founders and creators who want to be known. We shape a presence that reflects who you really are.",
-    points: [
-      "Profile & bio optimisation",
-      "Thought-leadership content",
-      "LinkedIn & Instagram growth",
-      "Personal content systems",
-    ],
+    tags: ["Profile & bio optimisation", "Thought-leadership content", "LinkedIn & Instagram growth", "Personal content system"],
   },
   {
-    idx: "05",
+    n: "05",
     title: "Meta Ads & Promotion",
-    desc: "Put fuel behind the content that works. We plan and run paid campaigns that reach the right people, not just more people.",
-    points: [
-      "Campaign setup & targeting",
-      "Creative for paid",
-      "Budget & bid management",
-      "Results tracking",
-    ],
+    desc: "Put fuel behind the content that works. We plan and run paid campaigns that reach the right people — not just more people.",
+    tags: ["Campaign setup & targeting", "Creative for paid", "Budget & bid management", "Results tracking"],
   },
   {
-    idx: "06",
+    n: "06",
     title: "Brand Audit",
-    desc: "Not sure what's working? We review your presence end to end and hand you a clear, honest plan to fix it.",
-    points: [
-      "Full profile & feed review",
-      "Messaging & consistency check",
-      "Competitor benchmarking",
-      "Prioritised action list",
-    ],
+    desc: "Not sure what&apos;s working? We review your presence end to end and hand you a clear, honest plan to fix it.",
+    tags: ["Full profile & feed review", "Messaging consistency check", "Competitor benchmarking", "Prioritised action list"],
   },
 ];
 
@@ -95,7 +65,7 @@ const process = [
   {
     step: "04",
     title: "Growth & Reporting",
-    desc: "We publish, engage, and watch the numbers. Every month you get clear reporting and a plan for what's next.",
+    desc: "We publish, engage, and watch the numbers. Every month you get clear reporting and a plan for what comes next.",
   },
 ];
 
@@ -103,47 +73,61 @@ export default function Services() {
   return (
     <>
       <section className="page-hero">
-        <div className="container">
-          <span className="eyebrow reveal">What We Do</span>
-          <h1 className="reveal">
-            Everything you need to grow online — <span className="accent">handled.</span>
+        <div className="wrap">
+          <span className="label r">What We Do</span>
+          <h1 className="r">
+            Everything you need to grow online —{" "}
+            <em>handled.</em>
           </h1>
-          <p className="lead reveal" style={{ marginTop: "1.4rem" }}>
-            Pick a single service or let us run the whole thing. Either way, you
-            get clarity, consistency, and content that connects.
+          <p className="body-lg r delay-1" style={{ marginTop: "1rem" }}>
+            Pick one service or let us run the whole thing. Either way you get
+            clarity, consistency, and content that connects.
           </p>
         </div>
       </section>
 
+      {/* ── SERVICE LIST ── */}
       <section className="section">
-        <div className="container">
-          <div className="services-grid">
+        <div className="wrap">
+          <div className="services-list">
             {services.map((s) => (
-              <article className="service-card reveal" key={s.idx}>
-                <span className="idx">{s.idx}</span>
+              <div className="svc-row r" key={s.n}>
+                <div className="n">{s.n}</div>
                 <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-                <ul>
-                  {s.points.map((p) => (
-                    <li key={p}>{p}</li>
-                  ))}
-                </ul>
-              </article>
+                <div>
+                  <p dangerouslySetInnerHTML={{ __html: s.desc }} />
+                  <div className="svc-tags">
+                    {s.tags.map((t) => (
+                      <span className="tag" key={t}>{t}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ background: "var(--cream)" }}>
-        <div className="container">
-          <div className="section-head reveal">
-            <span className="eyebrow">How We Work</span>
-            <h2>A simple process, built on partnership.</h2>
+      {/* ── PROCESS ── */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="wrap">
+          <div className="sh">
+            <div>
+              <span className="label r">How We Work</span>
+              <h2 className="r" style={{ marginTop: "1.2rem" }}>
+                A simple process built on <em>partnership.</em>
+              </h2>
+            </div>
+            <p className="body-lg r delay-1">
+              No guesswork. No black box. Just a clear, collaborative process
+              that keeps you in the loop at every stage.
+            </p>
           </div>
+
           <div className="process-list">
-            {process.map((p) => (
-              <div className="process-row reveal" key={p.step}>
-                <div className="step">{p.step}</div>
+            {process.map((p, i) => (
+              <div className={`proc-row r delay-${i}`} key={p.step}>
+                <div className="step-n">{p.step}</div>
                 <div>
                   <h3>{p.title}</h3>
                   <p>{p.desc}</p>

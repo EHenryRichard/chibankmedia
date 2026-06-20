@@ -15,25 +15,21 @@ const links = [
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header className="nav">
-      <div className="container nav-inner">
-        <Link href="/" className="brand" onClick={() => setOpen(false)}>
-          Chibankz<span className="dot">.</span>
+      <div className="wrap nav-inner">
+        <Link href="/" className="wordmark" onClick={() => setOpen(false)}>
+          Chibankz<span>.</span>
         </Link>
 
-        <nav>
+        <nav aria-label="Main">
           <ul className="nav-links">
             {links.map((l) => (
               <li key={l.href}>
-                <Link
-                  href={l.href}
-                  className={isActive(l.href) ? "active" : ""}
-                >
+                <Link href={l.href} className={isActive(l.href) ? "active" : ""}>
                   {l.label}
                 </Link>
               </li>
@@ -41,23 +37,21 @@ export default function Nav() {
           </ul>
         </nav>
 
-        <Link href="/contact" className="btn btn-primary nav-cta">
+        <Link href="/contact" className="btn btn-cream nav-cta">
           Work With Us
         </Link>
 
         <button
-          className={`nav-toggle ${open ? "open" : ""}`}
+          className={`hamburger ${open ? "open" : ""}`}
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <span />
-          <span />
-          <span />
+          <span /><span /><span />
         </button>
       </div>
 
-      <div className={`mobile-menu ${open ? "open" : ""}`}>
+      <div className={`mobile-nav ${open ? "open" : ""}`}>
         <ul>
           {links.map((l) => (
             <li key={l.href}>
@@ -66,13 +60,11 @@ export default function Nav() {
               </Link>
             </li>
           ))}
-          <Link
-            href="/contact"
-            className="btn btn-primary"
-            onClick={() => setOpen(false)}
-          >
-            Work With Us
-          </Link>
+          <li>
+            <Link href="/contact" className="btn btn-cream" onClick={() => setOpen(false)}>
+              Work With Us
+            </Link>
+          </li>
         </ul>
       </div>
     </header>
