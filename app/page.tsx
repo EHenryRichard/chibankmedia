@@ -60,16 +60,9 @@ const suite = [
   },
   {
     n: "03",
-    title: "Strategy & Consulting",
-    tagline: "A CLEAR ROADMAP FROM WHERE YOU ARE TO WHERE YOU WANT TO BE.",
-    desc: "A focused session where we define your audience, your positioning, your content pillars, and the exact platforms that deserve your attention — then hand you a plan to execute.",
-    includes: [
-      "Audience & competitor research",
-      "Messaging & positioning",
-      "Platform strategy",
-      "90-day action plan",
-    ],
-    cta: "Book a Session",
+    title: "Strategy & Growth",
+    desc: "A clear roadmap for who you’re talking to, what you’re saying, and how it turns followers into customers.",
+    tags: ["Audience Research", "Positioning", "Growth Playbook"],
   },
   {
     n: "04",
@@ -100,6 +93,7 @@ export default function Home() {
     <>
       {/* ── HERO ── */}
       <section className="hero">
+        {/* Portrait: absolute, bleeds to right viewport edge */}
         <div className="hero-portrait" aria-hidden="true">
           <Image
             src="/placeholder-portrait.svg"
@@ -111,6 +105,8 @@ export default function Home() {
           />
           <div className="portrait-fade" />
         </div>
+
+        {/* Text content: inside wrap, stacked top–to–bottom */}
         <div className="wrap">
           <div className="hero-content">
             <h1 className="display hero-headline r">
@@ -119,14 +115,16 @@ export default function Home() {
               with clarity &amp;<br />
               <span className="script-word">consistency.</span>
             </h1>
+
             <div className="hero-bottom">
               <p className="hero-subtext r delay-1">
-                <strong>WE&apos;RE JAMES &amp; CHIDINMA — CHIBANKZ MEDIA™.</strong><br />
-                WE HELP SMALL BUSINESSES AND PERSONAL BRANDS GROW WITH INTENTIONAL STRATEGY, CONSISTENT CONTENT, AND COMMUNITY THAT ACTUALLY CONNECTS.
+                <strong>We&apos;re James &amp; Chidinma — Chibankz Media.</strong><br />
+                We help small businesses and personal brands build a social media
+                presence that earns trust and attracts the right audience.
               </p>
               <div className="hero-btns r delay-2">
                 <Link href="/contact" className="btn btn-sand">
-                  Request a Consult
+                  Work With Us
                 </Link>
                 <Link href="/work" className="hero-link">
                   See the Work →
@@ -191,19 +189,12 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="feature-card r delay-1">
-              <div className="feature-card-label">What&apos;s included</div>
-              <ul className="feature-card-list">
-                {blueprintIncludes.map((item) => (
-                  <li className="feature-card-item" key={item}>{item}</li>
-                ))}
-              </ul>
-              <div className="feature-card-footer">
-                <span className="label no-line" style={{ color: "var(--sand)", fontSize: "0.62rem" }}>
-                  Meta Certified &nbsp;·&nbsp; 5+ Years &nbsp;·&nbsp; 100+ Brands
-                </span>
-              </div>
-            </div>
+          </div>
+
+          <div style={{ display: "flex", gap: "clamp(1.5rem, 4vw, 3rem)", flexWrap: "wrap", paddingTop: "1rem" }}>
+            {["Coaches", "E-commerce", "Real Estate", "Wellness", "Creators", "Local Business"].map((ind) => (
+              <span key={ind} className="tag r">{ind}</span>
+            ))}
           </div>
         </div>
       </section>
