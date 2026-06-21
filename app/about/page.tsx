@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import CtaBanner from "@/components/CtaBanner";
 
 export const metadata: Metadata = {
@@ -43,7 +44,13 @@ export default function About() {
       <section className="section">
         <div className="wrap about-split">
           <div className="portrait-frame r">
-            <div className="initials">JC</div>
+            <Image
+              src="/placeholder-portrait.svg"
+              alt="James &amp; Chidinma — Chibankz Media"
+              width={600}
+              height={820}
+              className="about-portrait-img"
+            />
             <div className="cert-badge">Meta Certified</div>
           </div>
 
@@ -79,7 +86,7 @@ export default function About() {
             <div>
               <span className="label r">What We Stand For</span>
               <h2 className="r" style={{ marginTop: "1.2rem" }}>
-                The three Cs behind every brand we grow.
+                The three C’s behind every brand we grow.
               </h2>
             </div>
             <p className="body-lg r delay-1">

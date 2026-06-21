@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import CtaBanner from "@/components/CtaBanner";
 
 const stats = [
@@ -24,7 +25,7 @@ const services = [
   {
     n: "03",
     title: "Strategy & Growth",
-    desc: "A clear roadmap for who you're talking to, what you're saying, and how it turns followers into customers.",
+    desc: "A clear roadmap for who you’re talking to, what you’re saying, and how it turns followers into customers.",
     tags: ["Audience Research", "Positioning", "Growth Playbook"],
   },
   {
@@ -41,23 +42,44 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className="hero">
         <div className="wrap">
-          <h1 className="display hero-headline r">
-            Growing brands<br />
-            that connect<br />
-            with clarity &amp;<br />
-            <span className="script-word">consistency.</span>
-          </h1>
+          <div className="hero-inner">
+            {/* Text column */}
+            <div className="hero-content">
+              <h1 className="display hero-headline r">
+                Growing brands<br />
+                that connect<br />
+                with clarity &amp;<br />
+                <span className="script-word">consistency.</span>
+              </h1>
 
-          <p className="hero-subtext r delay-1">
-            <strong>We&apos;re James &amp; Chidinma — Chibankz Media.</strong><br />
-            We help small businesses and personal brands build a social media<br />
-            presence that earns trust and attracts the right audience.
-          </p>
+              <p className="hero-subtext r delay-1">
+                <strong>We&apos;re James &amp; Chidinma — Chibankz Media.</strong><br />
+                We help small businesses and personal brands build a social
+                media presence that earns trust and attracts the right audience.
+              </p>
 
-          <div className="r delay-2">
-            <Link href="/contact" className="btn btn-sand">
-              Work With Us
-            </Link>
+              <div className="hero-btns r delay-2">
+                <Link href="/contact" className="btn btn-sand">
+                  Work With Us
+                </Link>
+                <Link href="/work" className="hero-link">
+                  See the Work →
+                </Link>
+              </div>
+            </div>
+
+            {/* Portrait column */}
+            <div className="hero-portrait r delay-2">
+              <Image
+                src="/placeholder-portrait.svg"
+                alt="James &amp; Chidinma — Chibankz Media"
+                width={600}
+                height={820}
+                priority
+                className="portrait-img"
+              />
+              <div className="portrait-fade" />
+            </div>
           </div>
         </div>
       </section>
