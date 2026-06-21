@@ -20,7 +20,7 @@
   --line-med:  rgba(242, 237, 231, 0.18);
   --line-dk:   rgba(242, 237, 231, 0.06);
 
-  /* Lighter surface (rare, for contrast panels) */
+  /* Lighter surface */
   --surface:     #f2ede7;
   --surface-txt: #2c2929;
 
@@ -146,7 +146,6 @@ h1, h2, h3, h4 {
   white-space: nowrap;
 }
 
-/* Solid cream */
 .btn-cream {
   background: var(--cream);
   color: var(--bg);
@@ -157,7 +156,6 @@ h1, h2, h3, h4 {
   color: var(--cream);
 }
 
-/* Orange fill */
 .btn-orange {
   background: var(--orange);
   color: var(--cream);
@@ -168,7 +166,6 @@ h1, h2, h3, h4 {
   color: var(--orange);
 }
 
-/* Ghost on dark */
 .btn-ghost {
   background: transparent;
   color: var(--cream);
@@ -178,7 +175,6 @@ h1, h2, h3, h4 {
   border-color: var(--cream);
 }
 
-/* Ghost on light surface */
 .btn-ghost-dk {
   background: transparent;
   color: var(--bg);
@@ -206,7 +202,7 @@ h1, h2, h3, h4 {
 .nav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 200;
   background: var(--bg-deep);
   border-bottom: 1px solid var(--line);
 }
@@ -219,7 +215,7 @@ h1, h2, h3, h4 {
   padding-inline: var(--pad);
 }
 
-/* ── wordmark (footer only) ── */
+/* wordmark lives in footer */
 .wordmark {
   font-family: var(--serif);
   font-size: 1.25rem;
@@ -266,7 +262,7 @@ h1, h2, h3, h4 {
   line-height: 2.2;
 }
 
-/* ── hamburger (always shown) ── */
+/* ── hamburger / × ── */
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -277,6 +273,8 @@ h1, h2, h3, h4 {
   padding: 4px;
   flex-shrink: 0;
   width: 40px;
+  z-index: 201;
+  position: relative;
 }
 
 .hamburger span {
@@ -284,50 +282,72 @@ h1, h2, h3, h4 {
   width: 26px;
   height: 1px;
   background: var(--cream);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  transform-origin: center;
 }
 
 .hamburger.open span:nth-child(1) { transform: translateY(4px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
 
-/* ── spacer mirrors hamburger for true centering ── */
+/* mirrors hamburger width so logo stays centred */
 .nav-spacer { width: 40px; flex-shrink: 0; }
 
-/* ── dropdown nav ── */
+/* ============================================================
+   FULL-SCREEN OVERLAY NAV
+   ============================================================ */
 .mobile-nav {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.45s ease;
+  position: fixed;
+  inset: 0;
+  z-index: 150;
   background: var(--bg-deep);
-  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
 }
 
-.mobile-nav.open { max-height: 560px; }
+.mobile-nav.open {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .mobile-nav ul {
-  padding: 2rem var(--pad) 3rem;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3rem);
+  padding: 0;
+  list-style: none;
 }
 
-.mobile-nav li { border-bottom: 1px solid var(--line); }
+.mobile-nav li { border: none; }
 
 .mobile-nav a {
   display: block;
-  padding: 1.1rem 0;
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  color: var(--cream-dim);
-  letter-spacing: 0.01em;
-  transition: color 0.2s;
+  font-family: var(--sans);
+  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+  font-weight: 300;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  text-align: center;
+  padding: 0;
 }
 
 .mobile-nav a.active,
-.mobile-nav a:hover { color: var(--cream); }
+.mobile-nav a:hover { opacity: 1; }
 
-.nav-cta-item { border-bottom: none !important; }
-.mobile-nav .btn { margin-top: 2rem; }
+.nav-cta-item { margin-top: 1rem; }
+
+.mobile-nav .btn {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  opacity: 1;
+}
 
 /* ============================================================
    HERO
@@ -371,7 +391,6 @@ h1, h2, h3, h4 {
   font-weight: 600;
 }
 
-/* keep these for any page that still references them */
 .hero-actions {
   display: flex;
   align-items: center;
@@ -400,14 +419,9 @@ h1, h2, h3, h4 {
 /* ============================================================
    TICKER / STATS BAR
    ============================================================ */
-.stats-bar {
-  border-bottom: 1px solid var(--line);
-}
+.stats-bar { border-bottom: 1px solid var(--line); }
 
-.stats-bar-inner {
-  display: flex;
-  align-items: stretch;
-}
+.stats-bar-inner { display: flex; align-items: stretch; }
 
 .stat-item {
   flex: 1;
@@ -434,13 +448,8 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 640px) {
-  .stats-bar-inner {
-    flex-wrap: wrap;
-  }
-  .stat-item {
-    flex: 1 1 50%;
-    border-bottom: 1px solid var(--line);
-  }
+  .stats-bar-inner { flex-wrap: wrap; }
+  .stat-item { flex: 1 1 50%; border-bottom: 1px solid var(--line); }
   .stat-item:nth-child(even) { border-right: none; }
 }
 
@@ -457,21 +466,14 @@ h1, h2, h3, h4 {
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
-.sh h2 {
-  font-size: clamp(2rem, 4.5vw, 3.4rem);
-}
+.sh h2 { font-size: clamp(2rem, 4.5vw, 3.4rem); }
 
-@media (max-width: 760px) {
-  .sh { grid-template-columns: 1fr; }
-}
+@media (max-width: 760px) { .sh { grid-template-columns: 1fr; } }
 
 /* ============================================================
    SERVICES
    ============================================================ */
-.services-list {
-  display: flex;
-  flex-direction: column;
-}
+.services-list { display: flex; flex-direction: column; }
 
 .svc-row {
   display: grid;
@@ -492,9 +494,7 @@ h1, h2, h3, h4 {
   padding-top: 0.25rem;
 }
 
-.svc-row h3 {
-  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
-}
+.svc-row h3 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
 
 .svc-row p {
   color: var(--cream-dim);
@@ -519,12 +519,8 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 760px) {
-  .svc-row {
-    grid-template-columns: 40px 1fr;
-  }
-  .svc-row p, .svc-tags {
-    grid-column: 2;
-  }
+  .svc-row { grid-template-columns: 40px 1fr; }
+  .svc-row p, .svc-tags { grid-column: 2; }
 }
 
 /* ============================================================
@@ -593,9 +589,7 @@ h1, h2, h3, h4 {
   color: var(--orange);
 }
 
-.work-item h3 {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-}
+.work-item h3 { font-size: clamp(1.5rem, 2.5vw, 2rem); }
 
 .work-item p {
   color: var(--cream-dim);
@@ -626,9 +620,7 @@ h1, h2, h3, h4 {
   margin-top: 0.2rem;
 }
 
-@media (max-width: 720px) {
-  .work-grid { grid-template-columns: 1fr; }
-}
+@media (max-width: 720px) { .work-grid { grid-template-columns: 1fr; } }
 
 /* ============================================================
    ABOUT / PORTRAIT
@@ -709,17 +701,12 @@ h1, h2, h3, h4 {
   line-height: 1.7;
 }
 
-@media (max-width: 720px) {
-  .values-grid { grid-template-columns: 1fr; }
-}
+@media (max-width: 720px) { .values-grid { grid-template-columns: 1fr; } }
 
 /* ============================================================
    LIGHT SURFACE PANEL
    ============================================================ */
-.surface {
-  background: var(--surface);
-  color: var(--surface-txt);
-}
+.surface { background: var(--surface); color: var(--surface-txt); }
 
 .surface h2,
 .surface h3,
@@ -727,9 +714,7 @@ h1, h2, h3, h4 {
 
 .surface .label { color: var(--orange); }
 .surface .label::before { background: var(--orange); }
-
 .surface .body-lg { color: rgba(44,41,41,0.65); }
-
 .surface .rule { background: rgba(44,41,41,0.12); }
 
 /* ============================================================
@@ -761,9 +746,7 @@ h1, h2, h3, h4 {
   align-items: start;
 }
 
-@media (max-width: 760px) {
-  .contact-grid { grid-template-columns: 1fr; }
-}
+@media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
 
 .form-field {
   display: flex;
@@ -796,20 +779,13 @@ h1, h2, h3, h4 {
 }
 
 .form-field input::placeholder,
-.form-field textarea::placeholder {
-  color: var(--cream-sub);
-}
+.form-field textarea::placeholder { color: var(--cream-sub); }
 
 .form-field input:focus,
 .form-field textarea:focus,
-.form-field select:focus {
-  border-color: var(--orange);
-}
+.form-field select:focus { border-color: var(--orange); }
 
-.form-field textarea {
-  resize: vertical;
-  min-height: 120px;
-}
+.form-field textarea { resize: vertical; min-height: 120px; }
 
 .contact-info-list {
   display: flex;
@@ -940,9 +916,7 @@ h1, h2, h3, h4 {
   letter-spacing: 0.04em;
 }
 
-@media (max-width: 760px) {
-  .footer-grid { grid-template-columns: 1fr; gap: 2.2rem; }
-}
+@media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; gap: 2.2rem; } }
 
 /* ============================================================
    PAGE HERO (inner pages)
