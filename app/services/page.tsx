@@ -23,7 +23,7 @@ const services = [
   {
     n: "03",
     title: "Strategy & Consulting",
-    desc: "A clear roadmap for who you&apos;re talking to, what you&apos;re saying, and how it turns attention into customers.",
+    desc: "A clear roadmap for who you’re talking to, what you’re saying, and how it turns attention into customers.",
     tags: ["Audience & competitor research", "Positioning & messaging", "Platform strategy", "90-min intensive"],
   },
   {
@@ -41,7 +41,7 @@ const services = [
   {
     n: "06",
     title: "Brand Audit",
-    desc: "Not sure what&apos;s working? We review your presence end to end and hand you a clear, honest plan to fix it.",
+    desc: "Not sure what’s working? We review your presence end to end and hand you a clear, honest plan to fix it.",
     tags: ["Full profile & feed review", "Messaging consistency check", "Competitor benchmarking", "Prioritised action list"],
   },
 ];
@@ -95,7 +95,7 @@ export default function Services() {
                 <div className="n">{s.n}</div>
                 <h3>{s.title}</h3>
                 <div>
-                  <p dangerouslySetInnerHTML={{ __html: s.desc }} />
+                  <p>{s.desc}</p>
                   <div className="svc-tags">
                     {s.tags.map((t) => (
                       <span className="tag" key={t}>{t}</span>
