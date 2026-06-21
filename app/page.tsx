@@ -40,36 +40,25 @@ export default function Home() {
     <>
       {/* ── HERO ── */}
       <section className="hero">
-        <div className="wrap hero-inner">
-          <div>
-            <span className="label r">Social Media · Nigeria → Worldwide</span>
-            <h1 className="display hero-headline r delay-1">
-              Grow online with clarity, consistency &amp;{" "}
-              <em>content that connects.</em>
-            </h1>
-            <p className="body-lg r delay-2">
-              Chibankz Media helps small businesses and personal brands build a
-              social media presence that earns trust and attracts the right
-              audience. Five years. One hundred-plus brands. Two partners who
-              actually care.
-            </p>
-            <div className="hero-actions r delay-3">
-              <Link href="/contact" className="btn btn-orange">
-                Work With Us
-              </Link>
-              <Link href="/work" className="hero-link">
-                See the Work →
-              </Link>
-            </div>
-          </div>
+        <div className="wrap">
+          <h1 className="display hero-headline r">
+            Growing brands<br />
+            that connect<br />
+            with clarity &amp;<br />
+            <span className="script-word">consistency.</span>
+          </h1>
 
-          <aside className="hero-aside r delay-2">
-            <blockquote>
-              &ldquo;Here to help you make sense of your business — and turn it
-              into a brand people remember.&rdquo;
-            </blockquote>
-            <cite>— James &amp; the Chibankz team · Meta Certified</cite>
-          </aside>
+          <p className="hero-subtext r delay-1">
+            <strong>We&apos;re James &amp; Chidinma — Chibankz Media.</strong><br />
+            We help small businesses and personal brands build a social media<br />
+            presence that earns trust and attracts the right audience.
+          </p>
+
+          <div className="r delay-2">
+            <Link href="/contact" className="btn btn-sand">
+              Work With Us
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -112,7 +101,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* industries served */}
           <div style={{ display: "flex", gap: "clamp(1.5rem, 4vw, 3rem)", flexWrap: "wrap", paddingTop: "1rem" }}>
             {["Coaches", "E-commerce", "Real Estate", "Wellness", "Creators", "Local Business"].map((ind) => (
               <span key={ind} className="tag r">{ind}</span>

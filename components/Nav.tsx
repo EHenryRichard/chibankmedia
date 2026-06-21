@@ -20,48 +20,45 @@ export default function Nav() {
 
   return (
     <header className="nav">
-      <div className="wrap nav-inner">
-        <Link href="/" className="wordmark" onClick={() => setOpen(false)}>
-          Chibankz<span>.</span>
-        </Link>
-
-        <nav aria-label="Main">
-          <ul className="nav-links">
-            {links.map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className={isActive(l.href) ? "active" : ""}>
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <Link href="/contact" className="btn btn-cream nav-cta">
-          Work With Us
-        </Link>
-
+      <div className="nav-inner">
         <button
-          className={`hamburger ${open ? "open" : ""}`}
+          className={`hamburger${open ? " open" : ""}`}
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <span /><span /><span />
+          <span />
+          <span />
         </button>
+
+        <Link href="/" className="logo-mark" onClick={() => setOpen(false)}>
+          <span className="logo-the">the</span>
+          <span className="logo-name">CHIBANKZ</span>
+          <span className="logo-sub">MEDIA</span>
+        </Link>
+
+        <div className="nav-spacer" aria-hidden="true" />
       </div>
 
-      <div className={`mobile-nav ${open ? "open" : ""}`}>
+      <div className={`mobile-nav${open ? " open" : ""}`} aria-hidden={!open}>
         <ul>
           {links.map((l) => (
             <li key={l.href}>
-              <Link href={l.href} onClick={() => setOpen(false)}>
+              <Link
+                href={l.href}
+                className={isActive(l.href) ? "active" : ""}
+                onClick={() => setOpen(false)}
+              >
                 {l.label}
               </Link>
             </li>
           ))}
-          <li>
-            <Link href="/contact" className="btn btn-cream" onClick={() => setOpen(false)}>
+          <li className="nav-cta-item">
+            <Link
+              href="/contact"
+              className="btn btn-sand"
+              onClick={() => setOpen(false)}
+            >
               Work With Us
             </Link>
           </li>
