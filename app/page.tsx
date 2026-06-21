@@ -41,23 +41,35 @@ export default function Home() {
     <>
       {/* ── HERO ── */}
       <section className="hero">
-        <div className="wrap">
-          <div className="hero-inner">
-            {/* Text column */}
-            <div className="hero-content">
-              <h1 className="display hero-headline r">
-                Growing brands<br />
-                that connect<br />
-                with clarity &amp;<br />
-                <span className="script-word">consistency.</span>
-              </h1>
+        {/* Portrait: absolute, bleeds to right viewport edge */}
+        <div className="hero-portrait" aria-hidden="true">
+          <Image
+            src="/placeholder-portrait.svg"
+            alt=""
+            fill
+            priority
+            className="portrait-img"
+            sizes="55vw"
+          />
+          <div className="portrait-fade" />
+        </div>
 
+        {/* Text content: inside wrap, stacked top–to–bottom */}
+        <div className="wrap">
+          <div className="hero-content">
+            <h1 className="display hero-headline r">
+              Growing brands<br />
+              that connect<br />
+              with clarity &amp;<br />
+              <span className="script-word">consistency.</span>
+            </h1>
+
+            <div className="hero-bottom">
               <p className="hero-subtext r delay-1">
                 <strong>We&apos;re James &amp; Chidinma — Chibankz Media.</strong><br />
-                We help small businesses and personal brands build a social
-                media presence that earns trust and attracts the right audience.
+                We help small businesses and personal brands build a social media
+                presence that earns trust and attracts the right audience.
               </p>
-
               <div className="hero-btns r delay-2">
                 <Link href="/contact" className="btn btn-sand">
                   Work With Us
@@ -66,19 +78,6 @@ export default function Home() {
                   See the Work →
                 </Link>
               </div>
-            </div>
-
-            {/* Portrait column */}
-            <div className="hero-portrait r delay-2">
-              <Image
-                src="/placeholder-portrait.svg"
-                alt="James &amp; Chidinma — Chibankz Media"
-                width={600}
-                height={820}
-                priority
-                className="portrait-img"
-              />
-              <div className="portrait-fade" />
             </div>
           </div>
         </div>
