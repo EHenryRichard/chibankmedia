@@ -11,7 +11,7 @@ export default function Reveal() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const els = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
+    const els = Array.from(document.querySelectorAll<HTMLElement>(".r"));
 
     if (!("IntersectionObserver" in window)) {
       els.forEach((el) => el.classList.add("in"));
