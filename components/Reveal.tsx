@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 /**
- * Adds an `in` class to any element with the `reveal` class once it
+ * Adds an `in` class to any element with the `r` class once it
  * scrolls into view, driving the fade-up animation defined in globals.css.
  */
 export default function Reveal() {
