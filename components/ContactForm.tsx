@@ -30,8 +30,11 @@ export default function ContactForm() {
         </h3>
         <p style={{ color: "var(--cream-dim)" }}>
           We&apos;ve opened your email client with everything pre-filled. If it
-          didn&apos;t open, reach us at{" "}
-          <a href="mailto:hello@chibankzmedia.com" style={{ color: "var(--orange)", textDecoration: "underline" }}>
+          didn&apos;t open, reach us directly at{" "}
+          <a
+            href="mailto:hello@chibankzmedia.com"
+            style={{ color: "var(--sand)", textDecoration: "underline" }}
+          >
             hello@chibankzmedia.com
           </a>.
         </p>
@@ -54,21 +57,37 @@ export default function ContactForm() {
         <input id="brand" name="brand" type="text" placeholder="What should we know it as?" />
       </div>
       <div className="form-field">
+        <label htmlFor="service">Service You&apos;re Interested In</label>
+        <select id="service" name="service">
+          <option value="">Select a service…</option>
+          <option>Social Media Management</option>
+          <option>Content Creation</option>
+          <option>Strategy &amp; Consulting</option>
+          <option>Personal Branding</option>
+          <option>Meta Ads &amp; Promotion</option>
+          <option>Brand Audit</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div className="form-field">
         <label htmlFor="message">How can we help?</label>
         <textarea
           id="message"
           name="message"
           required
-          placeholder="Tell us about your goals, your platforms, and where you're stuck."
+          placeholder="Tell us about your goals, your platforms, and where you’re stuck."
         />
       </div>
       <div style={{ marginTop: "0.8rem" }}>
-        <button type="submit" className="btn btn-orange">
+        <button type="submit" className="btn btn-sand">
           Send Message
         </button>
       </div>
       <p style={{ marginTop: "1.2rem", fontSize: "0.8rem", color: "var(--cream-sub)" }}>
-        Prefer direct contact? Email hello@chibankzmedia.com
+        Prefer direct contact? Email{" "}
+        <a href="mailto:hello@chibankzmedia.com" style={{ color: "var(--cream-dim)" }}>
+          hello@chibankzmedia.com
+        </a>
       </p>
     </form>
   );

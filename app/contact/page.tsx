@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Chat with Chibankz Media. Tell us about your brand and let's build a social presence that connects.",
+    "Chat with Chibankz Media. Tell us about your brand and let’s build a social presence that connects.",
 };
 
 export default function Contact() {
@@ -41,29 +42,41 @@ export default function Contact() {
 
             <div className="ci-item">
               <div className="ci-k">Based In</div>
-              <div className="ci-v">Nigeria · Serving brands worldwide</div>
+              <div className="ci-v">Nigeria &middot; Serving brands worldwide</div>
             </div>
 
             <div className="ci-item">
-              <div className="ci-k">Language</div>
-              <div className="ci-v">English</div>
+              <div className="ci-k">Response Time</div>
+              <div className="ci-v">Within one working day</div>
             </div>
 
             <div className="ci-item">
               <div className="ci-k">Follow Us</div>
               <div className="social-links">
-                <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-                <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a href="https://instagram.com/chibankzmedia" target="_blank" rel="noreferrer">Instagram</a>
+                <a href="https://linkedin.com/company/chibankzmedia" target="_blank" rel="noreferrer">LinkedIn</a>
               </div>
             </div>
 
             <div className="ci-item" style={{ borderTop: "1px solid var(--line)", paddingTop: "2rem", marginTop: "0.5rem" }}>
               <div className="ci-k">A Note From James</div>
-              <p style={{ color: "var(--cream-dim)", marginTop: "0.7rem", fontFamily: "var(--serif)", fontStyle: "italic", fontSize: "clamp(1rem,1.6vw,1.2rem)", lineHeight: 1.6 }}>
+              <p style={{
+                color: "var(--cream-dim)",
+                marginTop: "0.7rem",
+                fontFamily: "var(--serif)",
+                fontStyle: "italic",
+                fontSize: "clamp(1rem,1.6vw,1.2rem)",
+                lineHeight: 1.65,
+              }}>
                 &ldquo;I&apos;m happy to offer my services to you. I engage and
                 commit to delivering nothing but the best result possible.
                 Chat me up.&rdquo;
               </p>
+              <div style={{ marginTop: "1.5rem" }}>
+                <Link href="/contact" className="btn btn-sand">
+                  Work With Us
+                </Link>
+              </div>
             </div>
           </aside>
         </div>

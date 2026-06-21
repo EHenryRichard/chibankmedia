@@ -6,9 +6,11 @@ export default function Footer() {
       <div className="wrap">
         <div className="footer-grid">
           <div className="footer-brand">
-            <div className="wordmark">
-              Chibankz<span style={{ color: "var(--orange)" }}>.</span>
-            </div>
+            <Link href="/" className="logo-mark" style={{ alignItems: "flex-start" }}>
+              <span className="logo-the">the</span>
+              <span className="logo-name">CHIBANKZ</span>
+              <span className="logo-sub">MEDIA</span>
+            </Link>
             <p className="footer-tagline">
               Helping small businesses and personal brands grow online with
               clarity, consistency, and content that connects.
@@ -29,8 +31,8 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Connect</h4>
             <ul>
-              <li><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
-              <li><a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></li>
+              <li><a href="https://instagram.com/chibankzmedia" target="_blank" rel="noreferrer">Instagram</a></li>
+              <li><a href="https://linkedin.com/company/chibankzmedia" target="_blank" rel="noreferrer">LinkedIn</a></li>
               <li><a href="mailto:hello@chibankzmedia.com">hello@chibankzmedia.com</a></li>
             </ul>
           </div>
@@ -38,7 +40,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Chibankz Media. All rights reserved.</span>
-          <span>Nigeria &nbsp;·&nbsp; Serving brands worldwide</span>
+          <span>Nigeria &nbsp;&middot;&nbsp; Serving brands worldwide</span>
         </div>
       </div>
     </footer>
