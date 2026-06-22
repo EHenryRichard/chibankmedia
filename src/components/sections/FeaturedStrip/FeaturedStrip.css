@@ -1,0 +1,132 @@
+.featured-strip {
+  overflow: hidden;
+  padding: 112px 0 0;
+  text-align: center;
+  background: #faf9f7;
+}
+
+.featured-heading {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) auto minmax(120px, 1fr);
+  align-items: center;
+  gap: 96px;
+  color: #a9a199;
+}
+
+.featured-heading::before,
+.featured-heading::after {
+  content: '';
+  height: 1px;
+  background: rgba(67, 57, 50, 0.35);
+}
+
+.featured-heading p {
+  margin: 0;
+  color: #a9a199;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.press-marquee {
+  overflow: hidden;
+  margin-top: 38px;
+  border-bottom: 1px solid rgba(67, 57, 50, 0.35);
+}
+
+.press-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 124px;
+  padding: 16px 0 56px;
+  animation: press-scroll 42s linear infinite;
+  transform: translateX(-818px);
+  will-change: transform;
+}
+
+.press-logo {
+  display: flex;
+  width: var(--logo-width);
+  height: 70px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.press-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--logo-position);
+}
+
+@keyframes press-scroll {
+  from {
+    transform: translateX(-818px);
+  }
+
+  to {
+    transform: translateX(-2388px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .press-track {
+    animation: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .featured-strip {
+    padding-top: 34px;
+  }
+
+  .featured-heading {
+    display: block;
+  }
+
+  .featured-heading::before,
+  .featured-heading::after {
+    display: none;
+  }
+
+  .featured-heading p {
+    font-size: 0.7rem;
+    letter-spacing: 0.01em;
+  }
+
+  .press-marquee {
+    margin-top: 32px;
+  }
+
+  .press-track {
+    gap: 54px;
+    padding: 12px 0 44px;
+    animation-duration: 60s;
+    transform: translateX(-90px);
+  }
+
+  .press-logo {
+    width: calc(var(--logo-width) * 0.72);
+    height: 56px;
+  }
+
+  .press-logo img {
+    height: 100%;
+  }
+
+  @keyframes press-scroll {
+    from {
+      transform: translateX(-90px);
+    }
+
+    to {
+      transform: translateX(-1332px);
+    }
+  }
+}

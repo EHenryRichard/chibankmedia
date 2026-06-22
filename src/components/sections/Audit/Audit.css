@@ -1,0 +1,95 @@
+.audit-section {
+  display: grid;
+  justify-items: center;
+  gap: 34px;
+  padding: var(--section-y-lg) var(--section-x);
+  color: var(--body);
+  background: var(--parchment);
+}
+
+.audit-inner {
+  width: min(100%, 1120px);
+}
+
+.audit-inner h2 {
+  margin: 0;
+  color: var(--espresso);
+  font-family: var(--serif);
+  font-size: 5.4rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.98;
+  text-align: center;
+}
+
+.audit-subtitle {
+  margin: 28px 0 32px;
+  color: var(--cocoa);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.55;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.audit-inner p:not(.audit-subtitle),
+.audit-includes {
+  margin: 0 auto 18px;
+  max-width: 980px;
+  font-size: 0.98rem;
+  line-height: 1.78;
+}
+
+.audit-includes {
+  margin-top: 26px;
+  margin-bottom: 0;
+}
+
+.audit-includes span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--espresso);
+  font-weight: 800;
+}
+
+.audit-includes ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.audit-includes li::before {
+  content: '\2713  ';
+  color: var(--espresso);
+  font-weight: 800;
+}
+
+@media (max-width: 1100px) {
+  .audit-inner h2 {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .audit-section {
+    gap: 28px;
+  }
+
+  .audit-inner h2 {
+    font-size: 3rem;
+  }
+
+  .audit-subtitle {
+    margin: 22px 0 26px;
+    font-size: 0.7rem;
+  }
+
+  .audit-inner p:not(.audit-subtitle),
+  .audit-includes {
+    font-size: 0.88rem;
+    line-height: 1.66;
+  }
+}
