@@ -9,6 +9,10 @@
   text-align: center;
 }
 
+.portfolio-section .section-kicker {
+  color: var(--espresso);
+}
+
 .center-heading h2 {
   margin: 0;
   color: var(--espresso);

@@ -22,16 +22,16 @@
 :root {
   --ink: #090908;
   --charcoal: #161412;
-  --espresso: #25201c;
-  --body: #463d35;
-  --clay: #8e7665;
-  --cocoa: #b59882;
-  --sand: #cbbcae;
+  --espresso: #2f1d16;
+  --body: #4b3026;
+  --clay: #a94d23;
+  --cocoa: #c35b27;
+  --sand: #e47b3b;
   --sage: #c4c3b4;
   --mushroom: #d8d0c7;
   --paper: #eee7df;
   --parchment: #f8f3eb;
-  --ivory: #fbf8f2;
+  --ivory: #fff8ee;
   --serif: 'noto-serif-display-d07nd9', Georgia, 'Times New Roman', serif;
   --script: 'Oriflame Script', Cardo, Georgia, 'Times New Roman', serif;
   --sans: 'soleil-rkn39g', Arial, ui-sans-serif, system-ui, sans-serif;

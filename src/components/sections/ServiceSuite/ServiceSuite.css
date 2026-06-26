@@ -9,6 +9,11 @@
   text-align: center;
 }
 
+.suite-heading .section-kicker,
+.suite-heading h2 em {
+  color: var(--espresso);
+}
+
 .suite-heading h2 {
   margin: 0;
   color: var(--espresso);
