@@ -48,9 +48,21 @@
   bottom: -84px;
   left: 0;
   display: grid;
+  gap: 18px;
   min-height: 190px;
   place-items: center;
+  padding: 30px 24px;
   background: rgba(30, 30, 30, 0.88);
+}
+
+.closing-body {
+  max-width: 460px;
+  margin: 0;
+  color: rgba(251, 248, 242, 0.92);
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  line-height: 1.4;
+  text-align: center;
 }
 
 .closing-panel .button {

@@ -1,29 +1,22 @@
-﻿import { services } from '../../../data/content'
+﻿import { services, servicesHeading, booking } from '../../../data/content'
 import './ServiceSuite.css'
 
 function ServiceSuite() {
   return (
     <section id="services" className="suite-section">
       <div className="suite-heading">
-        <p className="section-kicker">The offer suite</p>
+        <p className="section-kicker">{servicesHeading.kicker}</p>
         <h2>
-          The Iconic Brand
+          {servicesHeading.title[0]}
           <br />
-          <em>suite</em>
+          <em>{servicesHeading.title[1]}</em>
         </h2>
-        <p>
-          Strategy-first services for founders who need clarity, confidence, and a brand presence
-          with staying power.
-        </p>
+        <p>{servicesHeading.intro}</p>
       </div>
 
       <div className="service-stack">
-        {services.map((service, index) => (
-          <article
-            className="service-card"
-            key={service.title}
-            id={index === 3 ? 'strategy' : undefined}
-          >
+        {services.map((service) => (
+          <article className="service-card" key={service.title}>
             <div className="service-image">
               <img src={service.image} alt="" />
             </div>
@@ -31,7 +24,7 @@ function ServiceSuite() {
               <p>{service.eyebrow}</p>
               <h3>{service.title}</h3>
               <span>{service.copy}</span>
-              <a href="#contact">{service.cta}</a>
+              <a href={booking.href}>{booking.label}</a>
             </div>
           </article>
         ))}
