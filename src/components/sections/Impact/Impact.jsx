@@ -1,38 +1,35 @@
-import { impact } from '../../../data/content'
+import { stats, booking, images } from '../../../data/content'
 import './Impact.css'
 
 function Impact() {
   return (
     <section className="impact-section">
       <div className="impact-hero">
+        <div className="impact-visual">
+          <img src={images.impact} alt="Chidinma, co-founder of Chibankz" />
+        </div>
+
         <div className="impact-copy">
           <h2>
-            {impact.title}
+            {stats.heading[0]}
             <br />
-            <em>division</em>
+            <em>{stats.heading[1]}</em>
           </h2>
-          <p>{impact.subtitle}</p>
-          <p>{impact.body}</p>
-          <a className="button button-light" href="#contact">
-            Let&apos;s Start The Conversation
-          </a>
-          <p className="impact-note">{impact.note}</p>
-        </div>
-      </div>
+          <p>{stats.intro}</p>
 
-      <div className="impact-support">
-        <div className="impact-support-title">
-          <h3>
-            Make an impact
-            <br />
-            <em>with us</em>
-          </h3>
-        </div>
-        <div className="impact-support-copy">
-          <p>{impact.support}</p>
-          <a className="button button-dark" href="#contact">
-            Support A Cause
+          <div className="impact-stats">
+            {stats.items.map((item) => (
+              <div className="impact-stat" key={item.label}>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <a className="button button-light" href={booking.href}>
+            {booking.label}
           </a>
+          <p className="impact-note">{stats.cta}</p>
         </div>
       </div>
     </section>

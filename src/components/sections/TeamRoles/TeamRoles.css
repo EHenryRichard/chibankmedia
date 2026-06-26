@@ -1,0 +1,261 @@
+.team-roles-section {
+  padding: var(--section-y-xl) max(var(--gutter), 6vw);
+  color: var(--ivory);
+  background: #20201e;
+}
+
+.team-roles-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.65fr);
+  gap: 80px;
+  align-items: end;
+  padding-bottom: 72px;
+  border-bottom: 1px solid rgba(251, 248, 242, 0.2);
+}
+
+.team-roles-header .section-kicker {
+  color: var(--cocoa);
+}
+
+.team-roles-header h2 {
+  margin: 0;
+  color: var(--ivory);
+  font-family: var(--serif);
+  font-size: 5.4rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 0.94;
+}
+
+.team-roles-header h2 em {
+  color: var(--sand);
+}
+
+.team-roles-intro {
+  max-width: 540px;
+  margin: 0;
+  color: rgba(251, 248, 242, 0.76);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.team-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.team-role {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.82fr) minmax(250px, 1fr);
+  gap: 42px;
+  align-items: center;
+  min-width: 0;
+  padding: 72px 56px 72px 0;
+}
+
+.team-role + .team-role {
+  padding-right: 0;
+  padding-left: 56px;
+  border-left: 1px solid rgba(251, 248, 242, 0.2);
+}
+
+.team-role-image {
+  aspect-ratio: 4 / 5;
+  min-width: 0;
+  overflow: hidden;
+  background: #373632;
+}
+
+.team-role-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.82) contrast(0.98);
+}
+
+.team-role-content {
+  min-width: 0;
+}
+
+.team-role-number {
+  display: block;
+  margin-bottom: 48px;
+  color: rgba(251, 248, 242, 0.35);
+  font-family: var(--serif);
+  font-size: 1.22rem;
+  line-height: 1;
+}
+
+.team-role-label {
+  margin: 0 0 12px;
+  color: var(--cocoa);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.team-role-content h3 {
+  margin: 0;
+  color: var(--ivory);
+  font-family: var(--serif);
+  font-size: 2.7rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.02;
+}
+
+.team-role-copy {
+  margin: 24px 0 30px;
+  color: rgba(251, 248, 242, 0.72);
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+
+.team-role-services {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(251, 248, 242, 0.18);
+}
+
+.team-role-services li {
+  position: relative;
+  padding: 11px 0 11px 18px;
+  color: var(--ivory);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(251, 248, 242, 0.18);
+}
+
+.team-role-services li::before {
+  position: absolute;
+  top: 17px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  content: '';
+  background: var(--cocoa);
+  border-radius: 50%;
+}
+
+.team-roles-together {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.32fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: baseline;
+  padding-top: 58px;
+  border-top: 1px solid rgba(251, 248, 242, 0.2);
+}
+
+.team-roles-together span {
+  color: var(--cocoa);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.team-roles-together p {
+  max-width: 920px;
+  margin: 0;
+  color: var(--ivory);
+  font-family: var(--serif);
+  font-size: 2.45rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 1180px) {
+  .team-roles-header {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .team-roles-header h2 {
+    font-size: 4.7rem;
+  }
+
+  .team-roles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-role,
+  .team-role + .team-role {
+    grid-template-columns: minmax(240px, 0.62fr) minmax(0, 1fr);
+    padding: 64px 0;
+    border-left: 0;
+  }
+
+  .team-role + .team-role {
+    border-top: 1px solid rgba(251, 248, 242, 0.2);
+  }
+
+  .team-role-image {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 760px) {
+  .team-roles-section {
+    padding: 84px 20px;
+  }
+
+  .team-roles-header {
+    gap: 26px;
+    padding-bottom: 48px;
+  }
+
+  .team-roles-header h2 {
+    font-size: 3.08rem;
+    line-height: 0.98;
+  }
+
+  .team-roles-intro {
+    font-size: 0.94rem;
+    line-height: 1.68;
+  }
+
+  .team-role,
+  .team-role + .team-role {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 48px 0;
+  }
+
+  .team-role-image {
+    width: min(100%, 390px);
+    max-width: none;
+    aspect-ratio: 4 / 5;
+  }
+
+  .team-role-number {
+    margin-bottom: 28px;
+  }
+
+  .team-role-content h3 {
+    font-size: 2.4rem;
+  }
+
+  .team-role-copy {
+    margin: 20px 0 26px;
+  }
+
+  .team-roles-together {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-top: 42px;
+  }
+
+  .team-roles-together p {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+}

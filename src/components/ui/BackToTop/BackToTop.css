@@ -1,0 +1,63 @@
+.back-to-top {
+  position: fixed;
+  right: clamp(18px, 3vw, 44px);
+  bottom: clamp(18px, 3vw, 38px);
+  z-index: 18;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  padding: 0;
+  color: var(--ivory);
+  background: var(--ink);
+  border: 1px solid rgba(251, 248, 242, 0.24);
+  border-radius: 50%;
+  box-shadow: 0 12px 30px rgba(9, 9, 8, 0.22);
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition:
+    opacity 180ms ease,
+    visibility 0s linear 180ms,
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.back-to-top:hover {
+  color: var(--ink);
+  background: var(--sand);
+}
+
+.back-to-top svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 760px) {
+  .back-to-top {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
+  }
+}

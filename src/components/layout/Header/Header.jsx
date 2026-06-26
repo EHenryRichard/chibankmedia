@@ -1,11 +1,22 @@
 ﻿import { useEffect, useState } from 'react'
-import { images, leftNav, rightNav, navItems } from '../../../data/content'
+import { leftNav, rightNav, navItems } from '../../../data/content'
+import BrandMark from '../BrandMark/BrandMark'
 import './Header.css'
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   const closeMenu = () => setMenuOpen(false)
+
+  useEffect(() => {
+    const updateHeader = () => setIsScrolled(window.scrollY > 48)
+
+    updateHeader()
+    window.addEventListener('scroll', updateHeader, { passive: true })
+
+    return () => window.removeEventListener('scroll', updateHeader)
+  }, [])
 
   useEffect(() => {
     if (!menuOpen) return undefined
@@ -25,7 +36,7 @@ function Header() {
 
   return (
     <>
-      <header className="site-header">
+      <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
         <nav className="primary-nav nav-left" aria-label="Primary navigation">
           {leftNav.map(([label, href]) => (
             <a key={label} href={href}>
@@ -34,8 +45,8 @@ function Header() {
           ))}
         </nav>
 
-        <a className="brand-mark" href="#home" aria-label="The Brand Strategist home">
-          <img src={images.logo} alt="The Brand Strategist" />
+        <a className="brand-mark" href="#home" aria-label="Chibank Media home">
+          <BrandMark />
         </a>
 
         <nav className="primary-nav nav-right" aria-label="Secondary navigation">
@@ -77,5 +88,3 @@ function Header() {
 }
 
 export default Header
-
-

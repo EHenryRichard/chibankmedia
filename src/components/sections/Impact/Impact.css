@@ -5,9 +5,29 @@
 
 .impact-hero {
   display: grid;
-  min-height: 510px;
-  padding: var(--section-y-xl) var(--section-x);
+  grid-template-columns: minmax(300px, 0.84fr) minmax(460px, 1fr);
+  gap: clamp(54px, 7vw, 116px);
+  align-items: center;
+  min-height: 760px;
+  padding: var(--section-y-xl) max(var(--section-x), 6vw);
   background: #303030;
+}
+
+.impact-visual {
+  width: min(100%, 510px);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #242424;
+}
+
+.impact-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(0.85) contrast(0.95);
+  opacity: 0.88;
 }
 
 .impact-copy {
@@ -51,6 +71,50 @@
 
 .impact-copy .button {
   margin: 8px 0 36px;
+}
+
+.impact-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin: 38px 0 40px;
+  padding: 38px 0;
+  border-top: 1px solid rgba(251, 248, 242, 0.22);
+  border-bottom: 1px solid rgba(251, 248, 242, 0.22);
+}
+
+.impact-stat {
+  display: grid;
+  gap: 8px;
+}
+
+.impact-stat strong {
+  color: var(--sand);
+  font-family: var(--serif);
+  font-size: 3.6rem;
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.impact-stat span {
+  color: rgba(251, 248, 242, 0.78);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .impact-stats {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin: 30px 0 32px;
+    padding: 30px 0;
+  }
+
+  .impact-stat strong {
+    font-size: 2.9rem;
+  }
 }
 
 .impact-note {
@@ -107,6 +171,15 @@
 }
 
 @media (max-width: 1100px) {
+  .impact-hero {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .impact-visual {
+    width: min(100%, 560px);
+  }
+
   .impact-copy {
     margin-left: 0;
   }
@@ -128,6 +201,13 @@
 @media (max-width: 760px) {
   .impact-hero {
     min-height: 520px;
+    gap: 42px;
+    padding: 84px 20px;
+  }
+
+  .impact-visual {
+    width: 100%;
+    max-width: 390px;
   }
 
   .impact-copy h2 {
