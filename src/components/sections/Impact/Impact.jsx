@@ -6,7 +6,7 @@ function Impact() {
     <section className="impact-section">
       <div className="impact-hero">
         <div className="impact-visual">
-          <img src={images.impact} alt="Chidinma, co-founder of Chibankz" />
+          <img src={images.impact} alt="Chidinma, co-founder of Chibankz Media" />
         </div>
 
         <div className="impact-copy">

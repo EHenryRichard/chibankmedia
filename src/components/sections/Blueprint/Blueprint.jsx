@@ -30,7 +30,7 @@ function Blueprint() {
       </ol>
 
       <div className="blueprint-image">
-        <img src={images.blueprint} alt="The Chibank Growth Blueprint" />
+        <img src={images.blueprint} alt="The Chibankz Media Growth Blueprint" />
       </div>
 
       <p className="blueprint-intro">{blueprint.outro}</p>

@@ -3,7 +3,7 @@ import BrandMark from '../BrandMark/BrandMark'
 import './Footer.css'
 
 const footerTargets = {
-  'The Chibank Growth Blueprint': '#blueprint',
+  'The Chibankz Media Growth Blueprint': '#blueprint',
   'Social Media Management': '#services',
   'Content Creation': '#services',
   'Instagram Growth': '#services',
@@ -22,13 +22,15 @@ function Footer() {
         <h2 id="footer-hero-title" className="footer-hero-title">
           <span>Let's build something</span>
         </h2>
-        <p className="footer-script">iconic</p>
+        <p className="footer-script">remarkable</p>
 
         <div className="footer-feature">
           <img src={images.heroPortrait} alt="" />
-          <p>The Chibank Growth Edit</p>
           <a className="footer-newsletter" href={booking.href}>
-            Get the monthly exclusives here
+            Work With Us
+          </a>
+          <a className="footer-newsletter" href="#services">
+            Explore Our Services
           </a>
         </div>
 

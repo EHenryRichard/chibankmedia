@@ -23,11 +23,11 @@ function Hero() {
             <span className="strategy-script">{hero.headlineScript}</span>
           </span>
         </h1>
-        <p className="hero-intro">
-          <strong>{hero.brandLine}</strong>
-          <br />
-          {hero.intro}
-        </p>
+        <div className="hero-intro">
+          {hero.introParagraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
         <a className="button hero-button" href={booking.href}>
           {booking.label}
         </a>
@@ -37,5 +37,4 @@ function Hero() {
 }
 
 export default Hero
-
 

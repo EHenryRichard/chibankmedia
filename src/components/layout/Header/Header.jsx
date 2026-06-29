@@ -45,7 +45,7 @@ function Header() {
           ))}
         </nav>
 
-        <a className="brand-mark" href="#home" aria-label="Chibank Media home">
+        <a className="brand-mark" href="#home" aria-label="Chibankz Media home">
           <BrandMark />
         </a>
 

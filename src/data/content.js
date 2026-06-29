@@ -1,5 +1,5 @@
 /* ============================================================================
-   CHIBANK MEDIA — SITE CONTENT
+   CHIBANKZ MEDIA — SITE CONTENT
    ----------------------------------------------------------------------------
    This is the ONE file you edit to change anything on the site: words, stats,
    case studies, services, testimonials, links, etc. Each section below maps to
@@ -13,7 +13,7 @@
    every "Book a Discovery Call" button across the site updates automatically.
 --------------------------------------------------------------------------- */
 export const brand = {
-  name: 'Chibank Media',
+  name: 'Chibankz Media',
   trademark: 'Chibankz Media™',
   email: 'hello@chibankmedia.com',
 }
@@ -39,7 +39,7 @@ export const images = {
   bankole: '/IMG_5188.JPG.jpeg',
   chidinma: '/IMG_5192.JPG.jpeg',
   impact: '/image.png',
-  founder: '/image1.png',
+  founder: '/image3.png',
   closing: '/IMG_1063.JPG.jpeg',
   // Case-study / service photos (placeholders — replace with real client work)
   work1: '/image.png',
@@ -51,7 +51,7 @@ export const images = {
   service3: '/IMG_5189.JPG.jpeg',
   service4: '/IMG_5190.JPG.jpeg',
   service5: '/image3.png',
-}
+};
 
 /* ---------------------------------------------------------------------------
    NAVIGATION (header + mobile menu)
@@ -78,9 +78,11 @@ export const hero = {
   // is rendered in the script font for the signature look.
   headlineLines: ['Your Business', 'Deserves More', 'Than Random'],
   headlineScript: 'Posting',
-  brandLine: 'WE ARE CHIBANKZ MEDIA™.',
-  intro:
-    'WE HELP BUSINESSES BUILD A STRONGER ONLINE PRESENCE THROUGH SOCIAL MEDIA MANAGEMENT, CONTENT CREATION, AND SPECIALIZED META ADVERTISING.',
+  introParagraphs: [
+    'Your business isn’t struggling because people don’t need what you offer.',
+    'It’s struggling because your online presence doesn’t reflect the quality of your business.',
+    'We fix that through content, social media management, and Meta advertising that turns attention into customers.',
+  ],
 }
 
 /* ---------------------------------------------------------------------------
@@ -88,7 +90,7 @@ export const hero = {
    The logos are placeholders. Replace with real client logos when you have
    permission, or keep as a "trusted by brands worldwide" visual.
 --------------------------------------------------------------------------- */
-export const trustHeading = 'Trusted by businesses across 15+ countries'
+export const trustHeading = 'Trusted by businesses across 25+ countries'
 
 export const clientLogos = [
   { label: 'Client One', src: `${cdn}/2a3eac9c-95d5-4637-aa20-606f27510ad9/Mask+group+%2811%29.png?format=500w`, width: '118px' },
@@ -107,14 +109,14 @@ export const clientLogos = [
    not a freelancer. Reword the stage names/copy to match how you actually work.
 --------------------------------------------------------------------------- */
 export const teamRoles = {
-  kicker: 'The people behind Chibankz',
+  kicker: 'The people behind Chibankz Media',
   title: ['Two specialists.', 'One growth team.'],
   intro:
-    'Great content earns attention. Smart performance marketing turns it into action. Chibankz brings both disciplines together, so your brand can show up clearly and grow intentionally.',
+    'Great content earns attention. Smart performance marketing turns it into action. Chibankz Media brings both disciplines together, so your brand can show up clearly and grow intentionally.',
   members: [
     {
       number: '01',
-      name: 'Bankole J',
+      name: 'Bankole James',
       role: 'Performance & Digital Growth',
       image: images.bankole,
       copy: 'Bankole focuses on the systems that move people from interest to action, combining paid media, conversion thinking, and practical digital strategy.',
@@ -140,18 +142,18 @@ export const teamRoles = {
     },
   ],
   together:
-    'Chidinma builds the presence. Bankole amplifies the performance. Together, they are Chibankz.',
+    'Chidinma builds the presence. Bankole amplifies the performance. Together we run the Chibankz Media Team.',
 }
 
 export const blueprint = {
-  title: ['The Chibank', 'Growth Blueprint'],
+  title: ['The Chibankz Media', 'Growth Blueprint'],
   byline: 'Our signature 4-stage growth system',
-  lead: 'Most agencies sell you one piece — a few posts, a quick ad. We run the whole engine: from who you are, to what you post, to what you spend. The Chibank Growth Blueprint™ is the proven system we use to turn quiet social accounts into a presence your audience actually remembers and buys from.',
+  lead: 'Most agencies sell you one piece, a few posts, a quick ad. We run the whole engine: from who you are, to what you post, to what you spend. The Chibankz Media Growth Blueprint™ is the proven system we use to turn quiet social accounts into a presence your audience actually remembers and buys from.',
   stages: [
     {
       no: '01',
       name: 'Position',
-      copy: 'We define who you are, who you are for, and why you are the obvious choice — so every post has a job to do.',
+      copy: 'We define who you are, who you are for, and why you are the obvious choice, so every post has a job to do.',
     },
     {
       no: '02',
@@ -161,7 +163,7 @@ export const blueprint = {
     {
       no: '03',
       name: 'Distribute',
-      copy: 'We show up consistently and grow the right followers — real, engaged people, not vanity numbers.',
+      copy: 'We show up consistently and grow the right followers, real, engaged people, not vanity numbers.',
     },
     {
       no: '04',
@@ -169,7 +171,7 @@ export const blueprint = {
       copy: 'We put specialized Meta advertising behind what is already working to scale reach, leads, and sales.',
     },
   ],
-  outro: 'One system. From your brand, to your content, to your ad spend — handled.',
+  outro: 'One system. From your brand, to your content, to your ad spend, handled.',
 }
 
 /* ---------------------------------------------------------------------------
@@ -179,7 +181,7 @@ export const servicesHeading = {
   kicker: 'What we do',
   title: ['How We Help You', 'Grow'],
   intro:
-    'Full-service social media built to do one thing — turn attention into customers. Pick a single service or let us run the whole Blueprint.',
+    'Full-service social media built to do one thing, turn attention into customers. Pick a single service or let us run the whole Blueprint.',
 }
 
 export const services = [
@@ -187,25 +189,25 @@ export const services = [
     title: 'Social Media Management',
     eyebrow: 'Done-for-you',
     image: images.service1,
-    copy: 'We run your accounts end to end — planning, posting, captions, community management, and reporting — so you stay consistent without lifting a finger.',
+    copy: 'We run your accounts end to end, planning, posting, captions, community management, and reporting, so you stay consistent without lifting a finger.',
   },
   {
     title: 'Content Creation',
-    eyebrow: 'Reels, photo & graphics',
+    eyebrow: 'Reels, graphics & social content',
     image: images.service2,
-    copy: 'Scroll-stopping reels, photography, and branded graphics created for your audience and built to be saved, shared, and acted on.',
+    copy: 'Content your audience actually wants to watch, save, and share. From engaging reels to branded graphics and social media creatives that captures attention, builds trust, and moves people to take action.',
   },
   {
     title: 'Instagram Growth',
     eyebrow: 'Real, engaged followers',
     image: images.service3,
-    copy: 'A proven organic system that grows the right followers — people who actually engage and buy — not bots or vanity numbers.',
+    copy: 'A proven organic system that grows the right followers, people who actually engage and buy, not bots or vanity numbers.',
   },
   {
     title: 'Paid Advertising',
     eyebrow: 'Specialized Meta ads',
     image: images.service4,
-    copy: 'Meta (Instagram & Facebook) ad funnels engineered for return on ad spend — the right offer, to the right people, at the right cost.',
+    copy: 'Meta (Instagram & Facebook) ad funnels engineered for return on ad spend, the right offer, to the right people, at the right cost.',
   },
   {
     title: 'Brand Positioning',
@@ -238,16 +240,16 @@ export const caseStudies = [
     image: images.work1,
     challenge: 'Inconsistent posting and an Instagram that looked good but sold nothing.',
     action: 'Rebuilt their content system around a clear brand voice, shifting to a reels-led calendar with weekly product storytelling.',
-    result: 'Grew from 0 to 48,000 followers and lifted reach 312% in 90 days.',
-    metric: { value: '+312%', label: 'Reach in 90 days' },
+    result: 'Grew from 0 to 48,000 followers, getting at least 100 new organic followers each month, and lifted reach 2518% in 90 days.',
+    metric: { value: '+2518%', label: 'Reach in 90 days' },
   },
   {
-    client: 'Glow Theory',
-    industry: 'Beauty & Skincare · United Kingdom',
+    client: 'Tatasha Café',
+    industry: 'Food & Hospitality · United Kingdom',
     image: images.work2,
-    challenge: 'Spending on Meta ads every month with almost nothing to show for it.',
+    challenge: 'Inconsistent posting and a lack of strategy for ads.',
     action: 'Rebuilt the funnel with UGC-style creative, retargeting, and a tightened offer aimed at first-time buyers.',
-    result: 'Hit 4.7x return on ad spend and cut cost-per-acquisition by 38%.',
+    result: 'Expanded the café’s reach to more local customers, resulting in increased visibility and a steady flow of new faces visiting the café.',
     metric: { value: '4.7x', label: 'Return on ad spend' },
   },
   {
@@ -263,9 +265,9 @@ export const caseStudies = [
     client: 'Coach Daniel',
     industry: 'Health & Fitness · United States',
     image: images.work4,
-    challenge: 'Stuck at 5,000 followers for a year with no inbound coaching clients.',
-    action: 'Launched an Instagram growth system built on short-form education and a clear lead path in the bio.',
-    result: 'Scaled to 85,000 followers and booked 30 new coaching clients in 6 months.',
+    challenge: 'Struggling to consistently attract the right audience and turn Instagram into a source of coaching enquiries.',
+    action: 'Built a content strategy centered on educational short-form videos, consistent posting, and a clear path for followers to become coaching leads.',
+    result: 'Increased audience growth, improved engagement, and generated a steady flow of qualified coaching enquiries.',
     metric: { value: '17x', label: 'Audience growth' },
   },
 ]
@@ -276,9 +278,9 @@ export const caseStudies = [
 export const stats = {
   heading: ['The Numbers', 'Behind The Work'],
   intro:
-    'A track record built across industries and borders — and the discipline to repeat it for your brand.',
+    'A track record built across industries and countries, and the discipline to repeat it for your brand.',
   items: [
-    { value: '15+', label: 'Countries served' },
+    { value: '25+', label: 'Countries served' },
     { value: '200+', label: 'Clients served' },
     { value: '500+', label: 'Projects completed' },
   ],
@@ -362,36 +364,38 @@ export const reviewsLink =
 export const whyUs = {
   title: 'Why Clients Work With Us',
   subtitle:
-    'Strategy backed by execution — and an experience that feels effortless on your end.',
+    'Strategy backed by execution, and an experience that feels effortless on your end.',
   intro:
-    'Plenty of people will post for you. Few will treat your growth like a business problem to be solved. Here is what working with Chibank Media actually feels like.',
+    'Plenty of people will post for you. Few will treat your growth like a business problem to be solved. Here is what working with Chibankz Media actually feels like.',
   detail:
     'You get a partner who communicates clearly, moves fast, and ties every piece of content back to a result you can measure.',
   points: [
-    'Consistent, proactive communication — you are never left wondering',
+    'Consistent, proactive communication, you are never left wondering',
     'Content tailored to your exact audience, not recycled templates',
     'Proven experience across industries, from fashion to fitness to food',
-    'International client experience across 15+ countries',
-    'Strategy backed by execution — we plan it and we deliver it',
+    'International client experience across 25+ countries',
+    'Strategy backed by execution, we plan it and we deliver it',
   ],
 }
 
 /* ---------------------------------------------------------------------------
-   9. ABOUT — Meet the mind behind Chibank Media
+   9. ABOUT — Meet the mind behind Chibankz Media
 --------------------------------------------------------------------------- */
 export const about = {
-  script: 'Meet the founder',
-  title: ['The Mind Behind', 'Chibank Media'],
+  script: 'Meet the founders',
+  title: ['The Minds Behind', 'Chibankz Media'],
   intro:
-    'If you are wondering who is behind the work, here is a closer look at the person guiding your growth.',
-  // 👉 Replace with the founder's real name.
-  name: 'Chibueze Okafor',
+    'If you are wondering who is behind the work, here is a closer look at the people guiding your growth.',
+  name: 'James Bankole & Obada Chidinma Eunice',
   highlight: 'Strategy · Content · Paid Media',
   bio: [
-    'I started Chibank Media after watching brilliant businesses get ignored online — not because their product was weak, but because their presence was random and forgettable.',
-    'What began as helping a few local businesses post better turned into a full-service agency serving over 200 clients across 15+ countries.',
-    'I love this work for one reason: the moment a brand goes from invisible to in-demand, and the owner finally sees their business the way the world should.',
-    'Every account we touch gets the same thing — real strategy, content with intention, and execution that shows up in the numbers.',
+    'We are James Bankole and Obada Chidinma Eunice, the founders of Chibankz Media.',
+    'Between us, we bring over a decade of combined experience in digital marketing and social media management, helping businesses across different industries and countries build stronger brands online.',
+    'James is a digital marketer with over 8 years of experience, while Chidinma has spent almost 6 years managing social media for businesses, helping them communicate clearly, stay consistent, and grow with intention.',
+    'We started Chibankz Media because we realized many businesses don’t struggle because they have bad products or services. They struggle because they’re not visible enough.',
+    'Good businesses deserve to be seen, trusted, and remembered. That’s why we do what we do.',
+    'Through strategy, content, and marketing, our goal is to help businesses build an online presence that reflects the quality of what they offer.',
+    'Whether we’re managing a brand, running advertising campaigns, or creating content, we bring the same strategy and intention to everything we do.',
   ],
 }
 
@@ -408,7 +412,7 @@ export const closing = {
    FOOTER
 --------------------------------------------------------------------------- */
 export const footerLinks = [
-  'The Chibank Growth Blueprint',
+  'The Chibankz Media Growth Blueprint',
   'Social Media Management',
   'Content Creation',
   'Instagram Growth',
@@ -419,7 +423,7 @@ export const footerLinks = [
 ]
 
 export const footerBio =
-  'Chibank Media helps businesses build a stronger online presence through social media management, content creation, and specialized Meta advertising — strategy backed by execution, for brands across 15+ countries.'
+  'Chibankz Media helps businesses build a stronger online presence through social media management, content creation, and specialized Meta advertising, strategy backed by execution, for brands across 25+ countries.'
 
 // Social handle used by the footer Instagram feed row.
 export const social = {
@@ -430,9 +434,9 @@ export const social = {
 // Instagram feed thumbnails shown in a row near the bottom of the footer.
 // Placeholders for now — swap for your real post images.
 export const footerFeed = [
-  '/image3.png',
+  '/image4.jpeg',
   '/image.png',
   '/IMG_5188.JPG.jpeg',
   '/image1.png',
   '/IMG_5190.JPG.jpeg',
-]
+];
